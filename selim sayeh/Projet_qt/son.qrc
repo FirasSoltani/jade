@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>son/son.mp3</file>
+        <file>son/done.mp3</file>
+        <file>son/klaxon.mp3</file>
+        <file>son/flash.mp3</file>
+    </qresource>
+</RCC>
