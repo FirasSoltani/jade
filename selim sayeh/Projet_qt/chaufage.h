@@ -26,6 +26,7 @@ bool ajouter_temp();
 bool supprimer(int);
 void afficher(QTableView *tab);
 bool modifier(int IDC,int temp);
+QSqlQueryModel * stats();
 private slots:
 
 
@@ -46,6 +47,8 @@ void on_pb_supprimer_clicked();
 void on_pushButton_clicked();
 
 void on_pb_supprimer_2_clicked();
+
+void on_pushButton_2_clicked();
 
 private:
     Ui::Chaufage *ui;

@@ -50,6 +50,9 @@ public:
     QLabel *label_3;
     QLabel *label_5;
     QPushButton *pb_supprimer_2;
+    QWidget *tab_5;
+    QPushButton *pushButton_2;
+    QTableView *tableView;
 
     void setupUi(QDialog *Chaufage)
     {
@@ -612,10 +615,19 @@ public:
         pb_supprimer_2->setObjectName(QStringLiteral("pb_supprimer_2"));
         pb_supprimer_2->setGeometry(QRect(250, 180, 75, 23));
         tabWidget->addTab(tab_4, QString());
+        tab_5 = new QWidget();
+        tab_5->setObjectName(QStringLiteral("tab_5"));
+        pushButton_2 = new QPushButton(tab_5);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(280, 110, 75, 23));
+        tableView = new QTableView(tab_5);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(10, 20, 256, 192));
+        tabWidget->addTab(tab_5, QString());
 
         retranslateUi(Chaufage);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Chaufage);
@@ -638,6 +650,8 @@ public:
         label_5->setText(QApplication::translate("Chaufage", "Intensit\303\251", nullptr));
         pb_supprimer_2->setText(QApplication::translate("Chaufage", "Modifier", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("Chaufage", "Modifier", nullptr));
+        pushButton_2->setText(QApplication::translate("Chaufage", "Reload", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("Chaufage", "Stat", nullptr));
     } // retranslateUi
 
 };

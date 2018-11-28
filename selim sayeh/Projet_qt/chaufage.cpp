@@ -68,6 +68,7 @@ void Chaufage::on_pushButton_clicked()
 
     QItemSelectionModel *select=ui->tabchaufage->selectionModel();
     afficher(ui->tabchaufage);
+
 }
 
 
@@ -145,5 +146,25 @@ void Chaufage::on_pb_supprimer_2_clicked()
         QMessageBox::information(nullptr, QObject::tr("Modifier un chaufage"),
                     QObject::tr(" Chaufage modifié .\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+
+}
+QSqlQueryModel* Chaufage::stats()
+{
+
+    QSqlQueryModel *model =new QSqlQueryModel();
+    QSqlQuery *query = new QSqlQuery();
+
+   query->prepare("SELECT ((SELECT SUM(TEMPC) FROM CHAUFAGE )/(SELECT COUNT(*)FROM CHAUFAGE )) FROM CHAUFAGE");
+    query->exec();
+    model->setQuery(*query);
+
+    return model;
+}
+
+void Chaufage::on_pushButton_2_clicked()
+{
+
+ui->tableView->setModel(this->stats());
+
 
 }

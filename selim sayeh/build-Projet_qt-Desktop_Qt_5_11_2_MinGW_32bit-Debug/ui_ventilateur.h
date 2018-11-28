@@ -49,6 +49,9 @@ public:
     QLabel *label_3;
     QLabel *label_5;
     QPushButton *pb_modifier;
+    QWidget *tab_2;
+    QTableView *tableView;
+    QPushButton *pushButton_2;
 
     void setupUi(QDialog *Ventilateur)
     {
@@ -608,10 +611,19 @@ public:
         pb_modifier->setObjectName(QStringLiteral("pb_modifier"));
         pb_modifier->setGeometry(QRect(250, 180, 75, 23));
         tabWidget->addTab(tab_4, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        tableView = new QTableView(tab_2);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(20, 10, 256, 192));
+        pushButton_2 = new QPushButton(tab_2);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(290, 90, 75, 23));
+        tabWidget->addTab(tab_2, QString());
 
         retranslateUi(Ventilateur);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Ventilateur);
@@ -633,6 +645,8 @@ public:
         label_5->setText(QApplication::translate("Ventilateur", "Intensit\303\251", nullptr));
         pb_modifier->setText(QApplication::translate("Ventilateur", "Modifier", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("Ventilateur", "Modifier", nullptr));
+        pushButton_2->setText(QApplication::translate("Ventilateur", "Reload", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("Ventilateur", "Stat", nullptr));
     } // retranslateUi
 
 };

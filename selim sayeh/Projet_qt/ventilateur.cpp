@@ -148,3 +148,20 @@ void Ventilateur::on_pb_modifier_clicked()
 
 
 }
+QSqlQueryModel* Ventilateur::stats()
+{
+
+    QSqlQueryModel *model =new QSqlQueryModel();
+    QSqlQuery *query = new QSqlQuery();
+
+   query->prepare("SELECT ((SELECT SUM(TEMPV) FROM VENTILATEUR )/(SELECT COUNT(*)FROM VENTILATEUR )) FROM VENTILATEUR");
+    query->exec();
+    model->setQuery(*query);
+
+    return model;
+}
+
+void Ventilateur::on_pushButton_2_clicked()
+{
+    ui->tableView->setModel(this->stats());
+}
