@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+
     connect c;
     if(c.connectsql())
     {
@@ -16,14 +16,8 @@ int main(int argc, char *argv[])
     else
         QMessageBox::information(nullptr,"","Acess Denied");
 
-
-    w.mdp="1234";
-
-    w.show();
-    w.button();
-    //   w.n1(event);
-    w.update();
-    //.deletelight(12);
+     MainWindow w;
+     w.show();
 
     return a.exec();
 }

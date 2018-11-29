@@ -30,6 +30,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_lineEdit_search_textChanged(const QString &arg1);
+
 private:
     Ui::Useredit *ui;
 };

@@ -10,7 +10,7 @@ adduser::adduser(QWidget *parent) :
 
 adduser::~adduser()
 {
-    U.nb++;
+    U.nb*=-1;
     delete ui;
 }
 

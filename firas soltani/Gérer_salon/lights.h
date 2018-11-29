@@ -24,6 +24,7 @@ public :
     bool deletelight(int);
     bool addlight(int,QString);
     QSqlQueryModel * displaylights();
+    QSqlQueryModel * search(QString);
 
 };
 

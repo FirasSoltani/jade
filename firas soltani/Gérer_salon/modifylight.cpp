@@ -3,7 +3,7 @@
 #include "lights.h"
 #include "mainwindow.h"
 
-Modifylight::Modifylight(QWidget *parent,int index,int intensity,int etat) :
+Modifylight::Modifylight(QWidget *parent,int index,int intensity,int etat,int desc) :
     QDialog(parent),
     ui(new Ui::Modifylight)
 {
@@ -15,6 +15,8 @@ Modifylight::Modifylight(QWidget *parent,int index,int intensity,int etat) :
     else
     {this->ui->radioButton_2->setChecked(1);
      this->ui->horizontalSlider->setDisabled(1);}
+    if(desc!=0)
+    {    ui->pushButton->setEnabled(0);}
 }
 
 Modifylight::~Modifylight()

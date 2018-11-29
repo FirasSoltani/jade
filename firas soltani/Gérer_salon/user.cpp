@@ -105,3 +105,15 @@ bool User::modifierdes(QString des,QString id)
 
       return (query.exec());
     }
+
+
+QSqlQueryModel * User::search(QString s)
+{
+    QSqlQueryModel * q=new QSqlQueryModel();
+    q->setQuery("select * from users where id like'%"+s+"%'");
+    q->setHeaderData(0,Qt::Horizontal,QObject::tr("ID "));
+    q->setHeaderData(1,Qt::Horizontal,QObject::tr("Pass "));
+    q->setHeaderData(2,Qt::Horizontal,QObject::tr("Designation "));
+
+        return q;
+}

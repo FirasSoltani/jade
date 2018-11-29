@@ -15,6 +15,9 @@
 #include <lights.h>
 #include "user.h"
 #include "useredit.h"
+#include "editchambers.h"
+#include "windows.h"
+#include "addwindow.h"
 
 
 
@@ -31,9 +34,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     MainWindow(QString mdp){this->mdp=mdp;}
     ~MainWindow();
+    void speak(QString q);
 
-public slots:
-    void speak();
+
+
 
 
 private slots:
@@ -56,19 +60,17 @@ private slots:
 
     void on_pushButton_19_clicked();
 
-    void on_pushButton_12_clicked();
+    //void on_pushButton_12_clicked();
 
-    void on_pushButton_13_clicked();
+    void on_pushButtonlights_clicked();
 
-    void on_pushButton_14_clicked();
+    void on_pushButtonwindows_clicked();
 
-    void on_pushButton_23_clicked();
 
-    void on_pushButton_26_clicked();
 
-    void on_pushButton_24_clicked();
+    void on_backbt_clicked();
 
-    void on_pushButton_25_clicked();
+    void on_backbt2_clicked();
 
     void on_textEdit_2_textChanged();
 
@@ -82,9 +84,9 @@ private slots:
 
    void on_pushButton_27_clicked();
 
-   void on_tableView_activated(const QModelIndex &index);
+   void on_tableViewlights_activated(const QModelIndex &index);
 
-   void on_tableView_doubleClicked(const QModelIndex &index);
+   void on_tableViewlights_doubleClicked(const QModelIndex &index);
 
    void on_pushButton_28_clicked();
 
@@ -96,10 +98,24 @@ private slots:
 
    void on_pushButton_2_clicked();
 
+   void on_tableViewWindows_clicked(const QModelIndex &index);
+
+   void on_horizontalSlider_2_valueChanged(int value);
+
+   void on_horizontalSlider_3_valueChanged(int value);
+
+   void on_pushButton_3_clicked();
+
+   void on_tableViewWindows_doubleClicked(const QModelIndex &index);
+
+
+   void on_addlightbt_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool test(QString);
     QTextToSpeech *m_speech;
+
 
 
 public:
@@ -109,6 +125,8 @@ public:
     //void setlight(Lights *l);
     int index;
     User U;
+    int userdesc;
+    windows wi;
 
 
 };

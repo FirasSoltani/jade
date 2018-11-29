@@ -13,7 +13,7 @@ class Modifylight : public QDialog
     Q_OBJECT
 
 public:
-    Modifylight(QWidget *parent,int,int,int);
+    Modifylight(QWidget *parent,int,int,int,int);
     //Modifylight(QWidget *parent = nullptr,int);
     ~Modifylight();
     int index;

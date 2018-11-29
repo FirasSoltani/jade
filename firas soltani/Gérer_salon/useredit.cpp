@@ -5,9 +5,9 @@ Useredit::Useredit(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Useredit)
 {
+
     ui->setupUi(this);
     ui->tableView->setModel(U.displayusers());
-    ui->lineEdit->setText((QString)U.nb);
 }
 
 Useredit::~Useredit()
@@ -42,3 +42,7 @@ void Useredit::on_pushButton_clicked()
     adduser a;
     a.exec();
 }
+
+void Useredit::on_lineEdit_search_textChanged(const QString &arg1)
+{
+    ui->tableView->setModel(U.search(arg1));}

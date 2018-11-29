@@ -27,6 +27,7 @@ public :
     QString verification(QString,QString);
     void setindex(QModelIndex *);
     void setid(QString);
+    QSqlQueryModel * search(QString);
 };
 
 #endif // USER_H

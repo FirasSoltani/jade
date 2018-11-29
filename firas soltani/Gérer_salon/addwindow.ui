@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adduser</class>
- <widget class="QDialog" name="adduser">
+ <class>addwindow</class>
+ <widget class="QDialog" name="addwindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>216</width>
+    <height>115</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -472,59 +472,45 @@ QCheckBox::indicator:checked
 QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
 {
     border: 1px solid #444;
-}
-
-</string>
+}</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
+     <x>90</x>
+     <y>0</y>
+     <width>47</width>
+     <height>13</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   <property name="text">
+    <string>Index :</string>
    </property>
   </widget>
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>60</y>
-     <width>135</width>
-     <height>131</height>
+     <x>30</x>
+     <y>20</y>
+     <width>158</width>
+     <height>77</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="Useradd_id"/>
+     <widget class="QLineEdit" name="idwindowadd"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="Useradd_mdp"/>
+     <widget class="QComboBox" name="id_ch"/>
     </item>
     <item>
-     <widget class="QComboBox" name="combo_des">
-      <item>
-       <property name="text">
-        <string>Admin</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>User</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Guest</string>
-       </property>
-      </item>
+     <widget class="QDialogButtonBox" name="buttonBox">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="standardButtons">
+       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      </property>
      </widget>
     </item>
    </layout>
@@ -535,7 +521,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>adduser</receiver>
+   <receiver>addwindow</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -551,7 +537,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>adduser</receiver>
+   <receiver>addwindow</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

@@ -37,26 +37,33 @@ SOURCES += \
     modifylight.cpp \
     useredit.cpp \
     adduser.cpp \
-    chambers.cpp
+    chambers.cpp \
+    editchambers.cpp \
+    windows.cpp \
+    addwindow.cpp
 
 HEADERS += \
         mainwindow.h \
     user.h \
     lights.h \
-    windows.h \
     connect.h \
     addlights.h \
     modifylight.h \
     useredit.h \
     adduser.h \
-    chambers.h
+    chambers.h \
+    editchambers.h \
+    windows.h \
+    addwindow.h
 
 FORMS += \
         mainwindow.ui \
     addlights.ui \
     modifylight.ui \
     useredit.ui \
-    adduser.ui
+    adduser.ui \
+    editchambers.ui \
+    addwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

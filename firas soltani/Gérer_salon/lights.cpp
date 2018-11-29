@@ -54,6 +54,8 @@ bool Lights::modifieretat(int etat,int index)
 
 }
 
+
+
 bool Lights::deletelight(int index)
 {
     QSqlQuery query;
