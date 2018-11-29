@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1083</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-50</y>
+      <width>1151</width>
+      <height>681</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#MyLoginForm {
+background: red;
+}
+
+#mainFrame {
+border: 3px solid red;
+border-radius: 40px;
+background: white;
+}
+QLineEdit {
+padding: 1px;
+border-style: solid;
+border: 2px solid green;
+border-radius: 8px;
+}
+
+QPushButton {
+color: white;
+  background: gray;
+
+border-width: 2px;
+border-color: green;
+border-style: solid;
+border-radius: 10;
+padding: 3px;
+font-size: 12px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 80px;
+max-width: 80px;
+min-height: 20px;
+max-height: 20px;
+}
+QLabel {
+font-weight: blue;
+font-size: 13px;
+}
+QPushButton:hover { background-color: #66c011; }
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>130</y>
+      <width>154</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+color: white;
+  background: gray;
+
+border-width: 2px;
+border-color: blue;
+border-style: solid;
+border-radius: 10;
+padding: 3px;
+font-size: 15px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 140px;
+max-width: 140px;
+min-height: 80px;
+max-height: 80px;
+}
+QLabel {
+font-weight: blue;
+font-size: 8px;
+}
+QPushButton:hover { background-color: #8ca3c3; }</string>
+    </property>
+    <property name="text">
+     <string>Gestion Salle de bain</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>230</y>
+      <width>154</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#MyLoginForm {
+background: red;
+}
+
+#mainFrame {
+border: 3px solid red;
+border-radius: 40px;
+background: white;
+}
+QLineEdit {
+padding: 1px;
+border-style: solid;
+border: 2px solid green;
+border-radius: 8px;
+}
+
+QPushButton {
+color: white;
+  background: gray;
+
+border-width: 2px;
+border-color: blue;
+border-style: solid;
+border-radius: 10;
+padding: 3px;
+font-size: 20px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 140px;
+max-width: 140px;
+min-height: 80px;
+max-height: 80px;
+}
+QLabel {
+font-weight: blue;
+font-size: 13px;
+}
+QPushButton:hover { background-color: #8ca3c3; }
+</string>
+    </property>
+    <property name="text">
+     <string>Notifications</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>340</y>
+      <width>154</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#MyLoginForm {
+background: red;
+}
+
+#mainFrame {
+border: 3px solid red;
+border-radius: 40px;
+background: white;
+}
+QLineEdit {
+padding: 1px;
+border-style: solid;
+border: 2px solid green;
+border-radius: 8px;
+}
+
+QPushButton {
+color: white;
+  background: gray;
+
+border-width: 2px;
+border-color: blue;
+border-style: solid;
+border-radius: 10;
+padding: 3px;
+font-size: 20px;
+padding-left: 5px;
+padding-right: 5px;
+min-width: 140px;
+max-width: 140px;
+min-height: 80px;
+max-height: 80px;
+}
+QLabel {
+font-weight: blue;
+font-size: 13px;
+}
+QPushButton:hover { background-color: #8ca3c3; }
+</string>
+    </property>
+    <property name="text">
+     <string>EXIT</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1083</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
