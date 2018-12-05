@@ -27,7 +27,7 @@ public:
     bool supprimer(int idd);
     void afficher(QTableView *tab);
     bool modifier(int IDC,int temp);
-    QSqlQueryModel* stats();
+
 private slots:
     void on_dial_valueChanged(int value);
 
@@ -45,7 +45,7 @@ private slots:
 
     void on_pb_modifier_clicked();
 
-    void on_pushButton_2_clicked();
+
 
 private:
     Ui::Ventilateur *ui;

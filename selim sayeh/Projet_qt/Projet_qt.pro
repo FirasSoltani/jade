@@ -34,7 +34,8 @@ SOURCES += \
     temperature.cpp \
     chaufage.cpp \
     ventilateur.cpp \
-    voiture.cpp
+    voiture.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     temperature.h \
     chaufage.h \
     ventilateur.h \
-    voiture.h
+    voiture.h \
+    qcustomplot.h
 
 FORMS += \
         mainwindow.ui \

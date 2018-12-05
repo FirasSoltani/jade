@@ -6,10 +6,12 @@ INPUT(
 ./release\chaufage.o
 ./release\ventilateur.o
 ./release\voiture.o
+./release\qcustomplot.o
 ./release\qrc_son.o
 ./release\moc_mainwindow.o
 ./release\moc_temperature.o
 ./release\moc_chaufage.o
 ./release\moc_ventilateur.o
 ./release\moc_voiture.o
+./release\moc_qcustomplot.o
 );
