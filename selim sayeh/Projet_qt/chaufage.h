@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include <QTableView>
 #include <QTableWidget>
+#include "qcustomplot.h"
 
 namespace Ui {
 class Chaufage;
@@ -26,6 +27,9 @@ bool ajouter_temp();
 bool supprimer(int);
 void afficher(QTableView *tab);
 bool modifier(int IDC,int temp);
+QVector<double> stat_ticks();
+void tri_stat_nom(QVector<double>& t1);
+void makeplot(QCustomPlot *customPlot) ;
 QSqlQueryModel * stats();
 private slots:
 

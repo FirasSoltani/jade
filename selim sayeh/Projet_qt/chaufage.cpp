@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QMediaPlayer>
+
 Chaufage::Chaufage(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Chaufage)
@@ -164,7 +165,146 @@ QSqlQueryModel* Chaufage::stats()
 void Chaufage::on_pushButton_2_clicked()
 {
 
-ui->tableView->setModel(this->stats());
+makeplot(ui->ariya);
 
 
 }
+
+QVector<double> Chaufage::stat_ticks()
+{
+    QVector<double> t;
+    QSqlQuery *ql=new QSqlQuery();
+    double a=0;
+    ql->prepare("SELECT COUNT(IDC) from CHAUFAGE ");
+    ql->exec();
+    while(ql->next())
+    {a=ql->value(0).toDouble();}
+    for(double i=0;i<a;i++)
+    {
+        t<<i+1;
+    }
+    return t;
+}
+void Chaufage::tri_stat_nom(QVector<double>& t1)
+{
+    QSqlQuery *ql=new QSqlQuery();
+    double val1=0,val2=0,val3=0;
+    QString ch=Q_NULLPTR;
+
+
+        ql->prepare("SELECT COUNT(*) from CHAUFAGE WHERE TEMPC<20 ");
+        //ql->prepare("SELECT COUNT(*) from CHAUFAGE WHERE TEMPC>=20 && TEMPC<40 ");
+        //ql->prepare("SELECT COUNT(*) from CHAUFAGE WHERE TEMPC>=40  ");
+
+            ql->exec();
+            // ql->next();
+            val1 = ql->size();
+            qDebug() << "Msg Data " << " = " << val1 ;
+            t1<<val1;
+            ql->next();
+            val2 = ql->value(1).toDouble();
+            qDebug() << "Msg Data " << " = " << val2 ;
+            t1<<val2;
+            ql->next();
+            val3 = ql->value(2).toDouble();
+            qDebug() << "Msg Data " << " = " << val3 ;
+            t1<<val3;
+
+}
+
+
+ void Chaufage::makeplot(QCustomPlot *customPlot)
+{
+    // set dark background gradient:
+    customPlot->clearPlottables();
+    QLinearGradient gradient(0, 0, 0, 400);
+    gradient.setColorAt(0, QColor(90, 90, 90));
+    gradient.setColorAt(0.38, QColor(105, 105, 105));
+    gradient.setColorAt(1, QColor(70, 70, 70));
+    customPlot->setBackground(QBrush(gradient));
+    // create empty bar chart objects:
+    QCPBars *vingt = new QCPBars(customPlot->xAxis, customPlot->yAxis);
+
+    vingt->setAntialiased(false); // gives more crisp, pixel aligned bar borders
+
+    vingt->setStackingGap(1);
+
+    // set names and colors:
+
+    vingt->setName("Nombres de chaufages");
+    vingt->setPen(QPen(QColor(0, 168, 140).lighter(130)));
+    vingt->setBrush(QColor(0, 168, 140));
+    // stack bars on top of each other:
+
+    // prepare x axis with country labels:
+    QVector<double> ticks;
+    ticks << 1  << 2  << 3  ;
+    QVector<QString> labels  ;
+    labels << "[0°-20°]" << "[20°-40°]" << "[40°-63°]" ;
+    QVector<double> data;
+    //tri_stat_nom(data);
+    data << 5 << 3 << 8 ;
+    QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
+    textTicker->addTicks(ticks, labels);
+    customPlot->xAxis->setTicker(textTicker);
+    customPlot->xAxis->setTickLabelRotation(45);
+    customPlot->xAxis->setSubTicks(false);
+    customPlot->xAxis->setTickLength(0, 4);
+    customPlot->xAxis->setRange(0, 8);
+    customPlot->xAxis->setBasePen(QPen(Qt::white));
+    customPlot->xAxis->setTickPen(QPen(Qt::white));
+    customPlot->xAxis->grid()->setVisible(true);
+    customPlot->xAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
+    customPlot->xAxis->setTickLabelColor(Qt::white);
+    customPlot->xAxis->setLabelColor(Qt::white);
+
+    // prepare y axis:
+    customPlot->yAxis->setRange(0, 15);
+    customPlot->yAxis->setPadding(5);
+    customPlot->yAxis->setLabel("Nombres de chauffages");
+    customPlot->xAxis->setLabel("Temperature");
+    customPlot->yAxis->setBasePen(QPen(Qt::white));
+    customPlot->yAxis->setTickPen(QPen(Qt::white));
+    customPlot->yAxis->setSubTickPen(QPen(Qt::white));
+    customPlot->yAxis->grid()->setSubGridVisible(true);
+    customPlot->yAxis->setTickLabelColor(Qt::white);
+    customPlot->yAxis->setLabelColor(Qt::white);
+    customPlot->yAxis->grid()->setPen(QPen(QColor(130, 130, 130), 0, Qt::SolidLine));
+    customPlot->yAxis->grid()->setSubGridPen(QPen(QColor(130, 130, 130), 0, Qt::DotLine));
+
+    // Add data:
+    vingt->setData(ticks, data);
+
+
+    // setup legend:
+    customPlot->legend->setVisible(true);
+    customPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop|Qt::AlignHCenter);
+    customPlot->legend->setBrush(QColor(255, 255, 255, 100));
+    customPlot->legend->setBorderPen(Qt::NoPen);
+    QFont legendFont = font();
+    legendFont.setPointSize(10);
+    customPlot->legend->setFont(legendFont);
+    customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
+
+    vingt->setVisible(true);
+
+    /*if(ui->comboBox_Stat_f->currentIndex()==2) //soixante
+    {
+    vingt->setVisible(false);
+    quarante->setVisible(false);}
+    if(ui->comboBox_Stat_f->currentIndex()==3) //vingt
+    {
+     quarante->moveAbove(vingt);
+     soixante->moveAbove(quarante);
+     soixante->setVisible(false);
+     quarante->setVisible(false);}
+    if(ui->comboBox_Stat_f->currentIndex()==4) //quarante
+    {
+     soixante->moveAbove(quarante);
+     vingt->moveAbove(soixante);
+     soixante->setVisible(false);
+     vingt->setVisible(false);}*/
+    customPlot->replot();
+}
+
+

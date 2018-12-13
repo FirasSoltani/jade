@@ -21,6 +21,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
+#include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -52,13 +53,13 @@ public:
     QPushButton *pb_supprimer_2;
     QWidget *tab_5;
     QPushButton *pushButton_2;
-    QTableView *tableView;
+    QCustomPlot *ariya;
 
     void setupUi(QDialog *Chaufage)
     {
         if (Chaufage->objectName().isEmpty())
             Chaufage->setObjectName(QStringLiteral("Chaufage"));
-        Chaufage->resize(500, 300);
+        Chaufage->resize(661, 383);
         Chaufage->setStyleSheet(QLatin1String("QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -532,7 +533,7 @@ public:
                         "}"));
         tabWidget = new QTabWidget(Chaufage);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(50, 30, 371, 241));
+        tabWidget->setGeometry(QRect(20, 10, 541, 351));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         label = new QLabel(tab);
@@ -619,15 +620,17 @@ public:
         tab_5->setObjectName(QStringLiteral("tab_5"));
         pushButton_2 = new QPushButton(tab_5);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(280, 110, 75, 23));
-        tableView = new QTableView(tab_5);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(10, 20, 256, 192));
+        pushButton_2->setGeometry(QRect(410, 250, 75, 23));
+        ariya = new QCustomPlot(tab_5);
+        ariya->setObjectName(QStringLiteral("ariya"));
+        ariya->setGeometry(QRect(20, 20, 371, 271));
+        ariya->setStyleSheet(QLatin1String("\n"
+"background-color: qconicalgradient(cx:1, cy:1, angle:0, stop:0 rgba(0, 65, 255, 255), stop:1 rgba(255, 255, 255, 255));"));
         tabWidget->addTab(tab_5, QString());
 
         retranslateUi(Chaufage);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Chaufage);
