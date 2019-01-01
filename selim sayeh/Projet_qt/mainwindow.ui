@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>300</height>
+    <width>545</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -478,10 +478,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>20</y>
       <width>500</width>
-      <height>221</height>
+      <height>441</height>
      </rect>
     </property>
     <property name="title">
@@ -491,7 +491,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>160</y>
+       <y>180</y>
        <width>131</width>
        <height>23</height>
       </rect>
@@ -504,7 +504,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>160</y>
+       <y>180</y>
        <width>131</width>
        <height>23</height>
       </rect>
@@ -516,10 +516,10 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <widget class="QLabel" name="label1">
      <property name="geometry">
       <rect>
-       <x>290</x>
-       <y>30</y>
+       <x>270</x>
+       <y>40</y>
        <width>161</width>
-       <height>101</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="text">
@@ -533,9 +533,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>10</y>
+       <y>20</y>
        <width>151</width>
-       <height>131</height>
+       <height>141</height>
       </rect>
      </property>
      <property name="text">
@@ -545,6 +545,35 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <pixmap>temperature-icon-png-1.png</pixmap>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>300</y>
+       <width>181</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Visualiser le flux de la camera</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>260</y>
+       <width>241</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>../../camera.png</pixmap>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -552,7 +581,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>545</width>
      <height>21</height>
     </rect>
    </property>

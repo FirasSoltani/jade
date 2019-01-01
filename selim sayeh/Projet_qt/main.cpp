@@ -3,10 +3,12 @@
 #include "connexion.h"
 #include <QMessageBox>
 #include <QDebug>
+#include "chaufage.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
+    a.setStyle("fusion");
     w.show();
     Connexion c;
     bool test=c.ouvrirConnexion();
@@ -15,6 +17,7 @@ int main(int argc, char *argv[])
         QMessageBox::critical(nullptr, QObject::tr("database is open"),
                     QObject::tr("connection successful.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+
 }
 else
         QMessageBox::critical(nullptr, QObject::tr("database is not open"),

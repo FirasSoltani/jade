@@ -53,6 +53,7 @@ void Voiture::on_pb_ajouter_clicked()
 
 
     }
+    afficher(ui->tabvoit);
 }
 
 
@@ -76,6 +77,7 @@ void Voiture::on_pb_supprimer_clicked()
    QMessageBox::information(nullptr, QObject::tr("Supprimer une voiture"),
                QObject::tr("Voiture supprimée.\n"
                            "Click Cancel to exit."), QMessageBox::Cancel);
+   afficher(ui->tabvoit);
 
     }
 }
@@ -93,11 +95,7 @@ void Voiture::afficher(QTableView *tab)
 
 
 
-void Voiture::on_pushButton_clicked()
-{
-    QItemSelectionModel *select=ui->tabvoit->selectionModel();
-    afficher(ui->tabvoit);
-}
+
 
 void Voiture::rechercher()
 {
@@ -130,4 +128,9 @@ void Voiture::on_pushButton_2_clicked()
     music->play();
 
    rechercher();
+}
+
+void Voiture::on_tabWidget_tabBarClicked(int index)
+{
+    afficher(ui->tabvoit);
 }

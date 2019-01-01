@@ -31,6 +31,7 @@ QVector<double> stat_ticks();
 void tri_stat_nom(QVector<double>& t1);
 void makeplot(QCustomPlot *customPlot) ;
 QSqlQueryModel * stats();
+void rechercher();
 private slots:
 
 
@@ -48,11 +49,13 @@ void on_pb_supprimer_clicked();
 
 
 
-void on_pushButton_clicked();
-
 void on_pb_supprimer_2_clicked();
 
 void on_pushButton_2_clicked();
+
+void on_pushButton_3_clicked();
+
+void on_tabWidget_currentChanged(int index);
 
 private:
     Ui::Chaufage *ui;

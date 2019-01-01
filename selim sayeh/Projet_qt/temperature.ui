@@ -496,7 +496,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      </rect>
     </property>
     <property name="text">
-     <string>Gerer les chauffages</string>
+     <string>Gerer les chaufages</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">

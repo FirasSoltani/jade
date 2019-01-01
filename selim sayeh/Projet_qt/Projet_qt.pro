@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql \
-    multimedia
+    multimedia multimediawidgets
 QT+=sql
 
 
@@ -35,7 +35,8 @@ SOURCES += \
     chaufage.cpp \
     ventilateur.cpp \
     voiture.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    webcam.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,14 +45,18 @@ HEADERS += \
     chaufage.h \
     ventilateur.h \
     voiture.h \
-    qcustomplot.h
+    qcustomplot.h \
+    webcam.h
 
 FORMS += \
         mainwindow.ui \
     temperature.ui \
     chaufage.ui \
     ventilateur.ui \
-    voiture.ui
+    voiture.ui \
+    webcam.ui
+
+QMAKE_CXXFLAGS+= -std=gnu++14
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

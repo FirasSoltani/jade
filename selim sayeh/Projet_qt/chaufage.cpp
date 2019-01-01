@@ -43,6 +43,7 @@ bool Chaufage::ajouter_temp()
     query.bindValue(":idc", res);
     query.bindValue(":tempc", tempc);
     return  query.exec();
+
 }
 void Chaufage::afficher(QTableView *tab)
    {
@@ -62,15 +63,10 @@ bool Chaufage::modifier(int IDC,int temp)
      ql->addBindValue(temp);
      ql->addBindValue(IDC);
      return (ql->exec());
-}
-
-void Chaufage::on_pushButton_clicked()
-{
-
-    QItemSelectionModel *select=ui->tabchaufage->selectionModel();
-    afficher(ui->tabchaufage);
 
 }
+
+
 
 
 void Chaufage::on_dial_sliderReleased()
@@ -93,6 +89,8 @@ void Chaufage::on_pb_ajouter_clicked()
                                       "Click Cancel to exit."), QMessageBox::Cancel);
 
     }
+
+    afficher(ui->tabchaufage);
 
 }
 
@@ -134,6 +132,8 @@ void Chaufage::on_pb_supprimer_clicked()
             QObject::tr("Chaufage supprimé.\n"
                            "Click Cancel to exit."), QMessageBox::Cancel);
 }
+
+   afficher(ui->tabchaufage);
 }
 
 
@@ -147,6 +147,7 @@ void Chaufage::on_pb_supprimer_2_clicked()
         QMessageBox::information(nullptr, QObject::tr("Modifier un chaufage"),
                     QObject::tr(" Chaufage modifié .\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+    afficher(ui->tabchaufage);
 
 }
 QSqlQueryModel* Chaufage::stats()
@@ -307,4 +308,44 @@ void Chaufage::tri_stat_nom(QVector<double>& t1)
     customPlot->replot();
 }
 
+ void Chaufage::rechercher()
+ {
+     idc=ui->lineEdit->text().toInt();
+     QSqlQueryModel *model=new QSqlQueryModel();
+     QSqlQuery* query=new QSqlQuery();
+     query->prepare("Select * from CHAUFAGE where IDC=:id ");
+     query->bindValue(":id",idc);
+     query->exec();
+     model->setQuery(*query);
+     ui->tabchaufage->setModel(model);
+     qDebug()<<(model->rowCount());
+     if (model->rowCount()==0)
+         QMessageBox::information(nullptr, QObject::tr("Rechercher un Chaufage "),
+                     QObject::tr(" Le chaufage n'existe pas .\n"
+                                 "Click Cancel to exit."), QMessageBox::Cancel);
 
+
+       else
+         QMessageBox::information(nullptr, QObject::tr("Rechercher un chaufage "),
+                     QObject::tr(" Le chaufage existe .\n"
+                                 "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+ }
+
+
+void Chaufage::on_pushButton_3_clicked()
+{
+    QMediaPlayer *music=new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sounds/son/flash.mp3")) ;
+    music->play();
+
+   rechercher();
+
+}
+
+void Chaufage::on_tabWidget_currentChanged(int index)
+{
+
+    afficher(ui->tabchaufage);
+}
