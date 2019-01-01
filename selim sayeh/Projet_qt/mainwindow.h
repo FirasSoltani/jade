@@ -3,6 +3,8 @@
 #include <QMainWindow>
 #include "temperature.h"
 #include "voiture.h"
+#include "webcam.h"
+#include <QPropertyAnimation>
 
 namespace Ui {
 class MainWindow;
@@ -21,10 +23,14 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     Temperature *T;
     Voiture *V;
+    Webcam *C;
+    QPropertyAnimation *Animation;
 };
 
 #endif // MAINWINDOW_H

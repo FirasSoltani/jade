@@ -60,6 +60,7 @@ void Ventilateur::on_pb_ajouter_clicked()
         QMessageBox::information(nullptr, QObject::tr("Ajouter un Ventilateur"),
                           QObject::tr("Ventilateur ajouté.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
+        afficher(ui->tabv);
     }
 }
 
@@ -103,6 +104,7 @@ void Ventilateur::on_pb_supprimer_clicked()
         QMessageBox::information(nullptr, QObject::tr("Supprimer un Ventilateur"),
                     QObject::tr("Ventilateur supprimé.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+        afficher(ui->tabv);
     }
 }
 void Ventilateur::afficher(QTableView *tab)
@@ -119,12 +121,7 @@ void Ventilateur::afficher(QTableView *tab)
 
 
 
-void Ventilateur::on_pushButton_clicked()
-{
-    QItemSelectionModel *select=ui->tabv->selectionModel();
-    afficher(ui->tabv);
 
-}
 bool Ventilateur::modifier(int IDC,int temp)
 {
      QSqlQuery *ql=new QSqlQuery();
@@ -145,8 +142,49 @@ void Ventilateur::on_pb_modifier_clicked()
         QMessageBox::information(nullptr, QObject::tr("Modifier  un ventilateur "),
                     QObject::tr("ventilateur modifié .\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+    afficher(ui->tabv);
+
+
+}
+void Ventilateur::rechercher()
+{
+    idv=ui->lineEdit->text().toInt();
+    QSqlQueryModel *model=new QSqlQueryModel();
+    QSqlQuery* query=new QSqlQuery();
+    query->prepare("Select * from VENTILATEUR where IDV=:id ");
+    query->bindValue(":id",idv);
+    query->exec();
+    model->setQuery(*query);
+    ui->tabv->setModel(model);
+    qDebug()<<(model->rowCount());
+    if (model->rowCount()==0)
+        QMessageBox::information(nullptr, QObject::tr("Rechercher un Ventilateur "),
+                    QObject::tr(" Le ventilateur n'existe pas .\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+      else
+        QMessageBox::information(nullptr, QObject::tr("Rechercher un Ventilateur "),
+                    QObject::tr(" Le ventilateur existe .\n"
+                                "Click Cancel to exit."), QMessageBox::Cancel);
 
 
 }
 
 
+
+
+void Ventilateur::on_pushButton_2_clicked()
+{
+    QMediaPlayer *music=new QMediaPlayer();
+    music->setMedia(QUrl("qrc:/sounds/son/flash.mp3")) ;
+    music->play();
+
+   rechercher();
+
+}
+
+void Ventilateur::on_tabWidget_tabBarClicked(int index)
+{
+    afficher(ui->tabv);
+}

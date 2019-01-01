@@ -27,7 +27,7 @@ public:
     bool supprimer(int idd);
     void afficher(QTableView *tab);
     bool modifier(int IDC,int temp);
-
+    void rechercher();
 private slots:
     void on_dial_valueChanged(int value);
 
@@ -41,11 +41,14 @@ private slots:
 
     void on_pb_supprimer_clicked();
 
-    void on_pushButton_clicked();
 
     void on_pb_modifier_clicked();
 
 
+
+    void on_pushButton_2_clicked();
+
+    void on_tabWidget_tabBarClicked(int index);
 
 private:
     Ui::Ventilateur *ui;

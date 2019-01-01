@@ -541,19 +541,6 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>190</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Reload</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
     <attribute name="title">

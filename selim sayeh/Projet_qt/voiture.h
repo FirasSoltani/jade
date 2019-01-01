@@ -31,9 +31,9 @@ void on_pb_ajouter_clicked();
 
 void on_pb_supprimer_clicked();
 
-void on_pushButton_clicked();
-
 void on_pushButton_2_clicked();
+
+void on_tabWidget_tabBarClicked(int index);
 
 private:
 
