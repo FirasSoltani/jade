@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Salon</class>
+ <widget class="QWidget" name="Salon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>571</width>
+    <height>501</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>571</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Pictures/RoomSketcher Snapshot (1).jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>60</y>
+     <width>31</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>200</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>240</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>40</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>409</y>
+     <width>101</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4"/>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>551</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5"/>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>572</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2"/>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_5">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>430</y>
+     <width>411</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3"/>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>551</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>verticalLayoutWidget_3</zorder>
+  <zorder>verticalLayoutWidget_4</zorder>
+  <zorder>verticalLayoutWidget_2</zorder>
+  <zorder>verticalLayoutWidget_5</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>verticalLayoutWidget</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
